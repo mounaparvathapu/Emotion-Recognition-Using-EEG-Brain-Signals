@@ -1,0 +1,162 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600&family=Syncopate:wght@400;700&display=swap');
+
+.signal-viewport {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  
+  /* FULL SCREEN BACKGROUND cite: image_4.png */
+  background: 
+    linear-gradient(to bottom, rgba(5, 10, 20, 0.9) 0%, rgba(5, 10, 20, 0.4) 50%, rgba(5, 10, 20, 0.9) 100%),
+    url('../assets/gemini.png'); /* Use your uploaded image cite: image_4.png */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.overlay-shade {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.6) 100%);
+  pointer-events: none;
+}
+
+.content-layer {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1200px;
+  padding: 40px;
+}
+
+.glass-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.glass-header h1 {
+  font-family: 'Syncopate', sans-serif;
+  font-size: 2.5rem;
+  letter-spacing: 10px;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.accent-line {
+  font-size: 0.8rem;
+  color: #3b82f6;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 600;
+}
+
+.identities-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 150px; /* Large gap to showcase the center of the brain cite: image_4.png */
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* THE NEU-CARD (GLASSMORPHISM) */
+.neu-card {
+  position: relative;
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 30px;
+  border-radius: 100px; /* Sharp, professional edges */
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.neu-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(59, 130, 246, 0.5);
+  transform: translateY(-5px);
+}
+
+.glow-dot {
+  width: 8px;
+  height: 8px;
+  background: #3b82f6;
+  border-radius: 50%;
+  box-shadow: 0 0 15px #3b82f6;
+  margin-bottom: 15px;
+}
+
+.neu-card h3 {
+  font-family: 'Syncopate', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+font-weight: 700; /* Bold looks best for that modern feel */
+text-transform: uppercase; /* Helps mimic the Syncopate impact */
+letter-spacing: 2px; /* Adds that wide, airy look */
+  font-size: 1.1rem;
+  color: #fff;
+  margin: 0;
+  letter-spacing: 3px;
+}
+
+.state-tag {
+  font-size: 0.75rem;
+  color: #3b82f6;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.neu-card p {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 0.9rem;
+  color: #a1a1aa;
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Specific Color Accents */
+.alpha .glow-dot, .alpha .state-tag { color: #3b82f6; background-color: #3b82f6; }
+.theta .glow-dot, .theta .state-tag { color: #a78bfa; background-color: #a78bfa; }
+.beta .glow-dot, .beta .state-tag { color: #fbbf24; background-color: #fbbf24; }
+.gamma .glow-dot, .gamma .state-tag { color: #f87171; background-color: #f87171; }
+
+/* Responsive Adjustments */
+@media (max-width: 900px) {
+  .identities-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .glass-header h1 { font-size: 1.5rem; }
+}
+.signal-continue {
+  margin-top: 80px;
+  text-align: center;
+}
+
+.upload-btn {
+  padding: 14px 40px;
+  font-family: 'Syncopate', sans-serif;
+  font-size: 0.8rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid #3b82f6;
+  color: #3b82f6;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+
+.upload-btn:hover {
+  background: #3b82f6;
+  color: #000;
+  box-shadow: 0 0 25px #3b82f6;
+}
